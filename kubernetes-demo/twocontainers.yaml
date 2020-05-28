@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: twocontainers
+  #namespace: coba
+  #labels:
+    #app: twocontainers
+    #env: staging
+    #type: backend
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.17.7-alpine
+    ports:
+    - containerPort: 80
+  - name: shell
+    image: centos:7
+    command:
+      - "bin/bash"
+      - "-c"
+      - "sleep 10000"
