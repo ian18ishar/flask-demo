@@ -1,4 +1,4 @@
-FROM python:3.6.5
+FROM python:3
 MAINTAINER Your Name "ishar@alterra.id"
 RUN mkdir -p /demo
 COPY . /demo
