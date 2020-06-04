@@ -2,11 +2,9 @@
 
 eval "$(ssh-agent -s)" &&
 ssh-add -k ~/.ssh/id_rsa &&
-cd /alterra/www/flask-demo #helloworld
-git pull
 
 source ~/.profile
-echo "$DOCKERHUB_PASS" | docker login --username $DOCKERHUB_USER --password-stdin
+echo "$DOCKER_PASSWORD" | docker login --username $DOCKER_USERNAME --password-stdin
 docker stop backend
 docker rm backend
 docker rmi ian18ishar/alta:latest
